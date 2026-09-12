@@ -74,6 +74,9 @@ jobs:
   deploy:
     needs: [qualidade, build, test]
     runs-on: ubuntu-latest
+
+    environment:
+      name: production
     
     steps:
       - run: echo "Deploy Enviado"
