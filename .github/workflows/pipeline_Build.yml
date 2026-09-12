@@ -55,6 +55,7 @@ jobs:
           path: pipeline-demo.zip
 
   test:
+    needs: [qualidade, build]
     runs-on: ubuntu-latest
 
     steps:
