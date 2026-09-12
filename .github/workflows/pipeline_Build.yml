@@ -42,9 +42,13 @@ jobs:
         run: pytest --cov=app --cov-fail-under=90
   
   build:
+    needs: [qualidade]
     runs-on: ubuntu-latest
 
     steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
       - name: Gerar artefato ZIP
         run: zip -r pipeline-demo.zip .
 
